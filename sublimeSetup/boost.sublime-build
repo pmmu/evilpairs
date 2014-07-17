@@ -1,0 +1,16 @@
+{
+    "cmd": ["g++", "-W", "-Wall", "${file}", "-o", "${file_path}/${file_base_name}", "-I/opt/local/include", "-L/usr/local/lib", "-DBOOST_TEST_DYN_LINK"],
+    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+    "working_dir": "${file_path}",
+    "selector": "source.c, source.c++",
+    "variants":
+    [
+        {
+            "name": "Run",
+            //"cmd": ["./${file_base_name}"]
+            "cmd": "g++ ${file} -o ${file_path}/${file_base_name} -I/opt/local/include -DBOOST_TEST_DYN_LINK && open -a Terminal ${file_path}/./${file_base_name}",
+            "shell": true
+        }
+    ]
+}
+
