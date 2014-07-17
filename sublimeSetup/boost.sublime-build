@@ -7,7 +7,6 @@
     [
         {
             "name": "Run",
-            //"cmd": ["./${file_base_name}"]
             "cmd": "g++ ${file} -o ${file_path}/${file_base_name} -I/opt/local/include -DBOOST_TEST_DYN_LINK && open -a Terminal ${file_path}/./${file_base_name}",
             "shell": true
         }
